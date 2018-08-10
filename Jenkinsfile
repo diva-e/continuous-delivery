@@ -24,4 +24,7 @@ pipeline {
             echo 'I will always say Hello again!'
         }
     }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '3'))
+    }
 }
