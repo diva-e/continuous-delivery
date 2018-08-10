@@ -12,16 +12,19 @@ pipeline {
                 echo 'Testing....'
                 sh 'mvn verify'
             }
+            post {
+                success {
+                    echo 'Test success :)'
+                }
+                failure {
+                    echo 'Test failure :('
+                }
+            }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
             }
-        }
-    }
-    post {
-        always {
-            echo 'I will always say Hello again!'
         }
     }
     options {
