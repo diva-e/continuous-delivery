@@ -1,21 +1,33 @@
-node {
-    stage('Build') {
-        echo 'Building....'
-        mvn clean install
-    }
-    stage('Test') {
-        echo 'Testing....'
-        mvn test
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building....'
+                mvn clean install
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing....'
+                mvn test
+            }
+            post {
+                failure {
+                    echo 'Test failure!'
+                }
+                success {
+                    echo 'Test success!'
+                }
+            }
+        }
+        stage('Deploy') {
+            echo 'Deploying....'
+        }
     }
     post {
-        failure {
-            echo 'Test failure!'
+        always {
+            echo 'I will always say Hello again!'
         }
-        success {
-            echo 'Test success!'
-        }
-    }
-    stage('Deploy') {
-        echo 'Deploying....'
     }
 }
