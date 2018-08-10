@@ -4,25 +4,17 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building....'
-                mvn clean install
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing....'
-                mvn test
-            }
-            post {
-                failure {
-                    echo 'Test failure!'
-                }
-                success {
-                    echo 'Test success!'
-                }
             }
         }
         stage('Deploy') {
-            echo 'Deploying....'
+            steps {
+                echo 'Deploying....'
+            }
         }
     }
     post {
