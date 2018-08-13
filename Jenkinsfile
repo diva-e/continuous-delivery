@@ -23,12 +23,11 @@ pipeline {
         }
 
         stage('Deploy') {
+            when {
+                branch 'master'
+            }
             steps {
-                if (true) {
-                    echo 'Deploying ...'
-                } else {
-                    echo 'Skip Deploying ...'
-                }
+                echo 'Deploying ...'
             }
         }
 
