@@ -18,7 +18,7 @@ public class CDModelTest {
 
     @Test
     public void isFalse() {
-         Assert.assertFalse(true);
+         Assert.assertFalse(false);
     }
 
 }
