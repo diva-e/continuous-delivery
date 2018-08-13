@@ -24,7 +24,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                if (env.BRANCH_NAME == 'master') {
+                if (true) {
                     echo 'Deploying ...'
                 } else {
                     echo 'Skip Deploying ...'
