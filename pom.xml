@@ -68,6 +68,10 @@
             <id>maven-snapshots</id>
             <url>https://nexus.diva-e.com/repository/maven-snapshots/</url>
         </snapshotRepository>
+        <repository>
+            <id>maven-releases</id>
+            <url>https://nexus.diva-e.com/repository/maven-releases/</url>
+        </repository>
     </distributionManagement>
 
 </project>
