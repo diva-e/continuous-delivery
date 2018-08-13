@@ -3,13 +3,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building....'
+                echo 'Building ...'
                 sh 'mvn clean compile'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing....'
+                echo 'Testing ...'
                 sh 'mvn verify'
             }
             post {
@@ -23,9 +23,11 @@ pipeline {
         }
 
         stage('Deploy') {
-            if (env.BRANCH_NAME == 'master') {
-                steps {
-                    echo 'Deploying....'
+            steps {
+                if (env.BRANCH_NAME == 'master') {
+                    echo 'Deploying ...'
+                } else {
+                    echo 'Skip Deploying ...'
                 }
             }
         }
