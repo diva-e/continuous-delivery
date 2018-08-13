@@ -22,8 +22,8 @@ pipeline {
             }
         }
 
-        if(env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'develop') {
-            stage('Deploy') {
+        stage('Deploy') {
+            if(env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'develop') {
                 steps {
                     echo 'Deploying....'
                 }
