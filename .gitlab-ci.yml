@@ -1,0 +1,22 @@
+stages:
+- build
+- test
+- deploy
+
+Build:
+  stage: build
+  script:
+  - mvn clean compile
+
+Test:
+  stage: test
+  script:
+  - mvn test
+
+Deploy:
+  stage: deploy
+  only:
+    - develop
+    - master
+  script:
+  - mvn deploy -Dmaven.test.skip=true
