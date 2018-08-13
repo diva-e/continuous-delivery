@@ -1,0 +1,28 @@
+stages:
+- build
+- test
+- deploy
+
+Build:
+  stage: build
+  tags:
+    - docker
+  script:
+    - mvn clean compile
+
+Test:
+  stage: test
+  tags:
+    - docker
+  script:
+    - mvn test
+
+Deploy:
+  stage: deploy
+  tags:
+    - docker
+  only:
+    - develop
+    - master
+  script:
+    - mvn deploy -Dmaven.test.skip=true

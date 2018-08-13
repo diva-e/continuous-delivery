@@ -16,4 +16,9 @@ public class CDModelTest {
         Assert.assertEquals(testMessage, cdModel.getMessage());
     }
 
+    @Test
+    public void isFalse() {
+         Assert.assertFalse(false);
+    }
+
 }
