@@ -32,7 +32,7 @@ pipeline {
             }
             steps {
                 echo 'Deploying ...'
-                sh 'mvn deploy'
+                sh 'mvn deploy -Dmaven.test.skip=true'
             }
         }
     }
