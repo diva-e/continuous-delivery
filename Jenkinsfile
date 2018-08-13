@@ -21,11 +21,15 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+
+        if(env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'develop') {
+            stage('Deploy') {
+                steps {
+                    echo 'Deploying....'
+                }
             }
         }
+
     }
     options {
         buildDiscarder(logRotator(numToKeepStr: '3'))
