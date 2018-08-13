@@ -7,6 +7,7 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }
+
         stage('Test') {
             steps {
                 echo 'Testing ...'
@@ -31,10 +32,11 @@ pipeline {
             }
             steps {
                 echo 'Deploying ...'
+                sh 'mvn deploy'
             }
         }
-
     }
+
     options {
         buildDiscarder(logRotator(numToKeepStr: '3'))
     }
