@@ -23,7 +23,7 @@ pipeline {
         }
 
         stage('Deploy') {
-            if(env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'develop') {
+            if (env.BRANCH_NAME == 'master') {
                 steps {
                     echo 'Deploying....'
                 }
