@@ -66,11 +66,11 @@
     <distributionManagement>
         <snapshotRepository>
             <id>sa-snapshots</id>
-            <url>https://nexus.diva-e.com/repository/mbeck-sa/snapshots/</url>
+            <url>https://exampledomain/snapshots/</url>
         </snapshotRepository>
         <repository>
             <id>sa-releases</id>
-            <url>https://nexus.diva-e.com/repository/mbeck-sa/releases/</url>
+            <url>https://exampledomain/releases/</url>
         </repository>
     </distributionManagement>
 
